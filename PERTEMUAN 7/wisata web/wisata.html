@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wisata Indonesia | Home</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+</head>
+<body>
+  <!-- NAVBAR -->
+  <header>
+    <h1>Wisata Indonesia</h1>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#daftar">Daftar Wisata</a>
+      <a href="#kontak">Kontak</a>
+    </nav>
+  </header>
+
+  <!-- HOME -->
+  <section id="home" class="home-section fade-in">
+    <div class="home-content">
+      <h2>Jelajahi Keindahan Alam & Budaya Nusantara</h2>
+      <p>Temukan pesona terbaik dari Sabang sampai Merauke — pantai eksotis, danau megah, hingga warisan budaya dunia!</p>
+      <a href="#daftar" class="btn">Lihat Destinasi</a>
+    </div>
+  </section>
+
+  <!-- DAFTAR WISATA -->
+  <section id="daftar" class="gallery-section fade-in">
+    <h2>Destinasi Wisata Pilihan</h2>
+    <p class="subtitle">Temukan berbagai keajaiban alam dan budaya yang menakjubkan di seluruh Indonesia 🌊🌿</p>
+
+    <div class="gallery-grid">
+      <!-- CARD 1 -->
+      <div class="destination-card" data-name="Pantai Kuta" data-desc="Pantai Kuta terkenal dengan pasir putihnya dan menjadi destinasi favorit wisatawan lokal maupun mancanegara untuk menikmati matahari terbenam." data-img="https://www.hostelworld.com/blog/wp-content/uploads/dreamstimesmall_168832523.jpg">
+        <div class="card-image">
+          <img src="https://www.hostelworld.com/blog/wp-content/uploads/dreamstimesmall_168832523.jpg" alt="Pantai Kuta">
+          <div class="overlay"></div>
+        </div>
+        <div class="card-content">
+          <h3>Pantai Kuta</h3>
+          <p>Bali</p>
+          <button class="detail-btn">Lihat Detail</button>
+        </div>
+      </div>
+
+      <!-- CARD 2 -->
+      <div class="destination-card" data-name="Danau Toba" data-desc="Danau Toba adalah danau vulkanik terbesar di dunia, dengan Pulau Samosir di tengahnya. Cocok untuk wisata alam dan budaya Batak." data-img="https://regalsprings.co.id/wp-content/uploads/2023/05/Danau-Toba.png">
+        <div class="card-image">
+          <img src="https://regalsprings.co.id/wp-content/uploads/2023/05/Danau-Toba.png" alt="Danau Toba">
+          <div class="overlay"></div>
+        </div>
+        <div class="card-content">
+          <h3>Danau Toba</h3>
+          <p>Sumatera Utara</p>
+          <button class="detail-btn">Lihat Detail</button>
+        </div>
+      </div>
+
+      <!-- CARD 3 -->
+      <div class="destination-card" data-name="Candi Borobudur" data-desc="Candi Buddha terbesar di dunia yang menjadi salah satu warisan budaya dunia UNESCO, dibangun pada abad ke-8 oleh Dinasti Syailendra." data-img="https://assets-a1.kompasiana.com/items/album/2021/04/28/tempat-wisata-sekitar-candi-borobudur-60893a04d541df5e5c65c512.jpg">
+        <div class="card-image">
+          <img src="https://assets-a1.kompasiana.com/items/album/2021/04/28/tempat-wisata-sekitar-candi-borobudur-60893a04d541df5e5c65c512.jpg" alt="Candi Borobudur">
+          <div class="overlay"></div>
+        </div>
+        <div class="card-content">
+          <h3>Candi Borobudur</h3>
+          <p>Magelang, Jawa Tengah</p>
+          <button class="detail-btn">Lihat Detail</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MODAL POPUP -->
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <img id="modal-img" src="" alt="">
+      <h3 id="modal-title"></h3>
+      <p id="modal-desc"></p>
+    </div>
+  </div>
+
+  <!-- KONTAK -->
+  <section id="kontak" class="contact-section fade-in">
+    <h2>Hubungi Kami</h2>
+    <div class="contact-container">
+      <div class="contact-card">
+        <i class='bx bx-envelope'></i>
+        <h3>Email</h3>
+        <p><a href="mailto:wisataindonesia@gmail.com">wisataindonesia@gmail.com</a></p>
+      </div>
+
+      <div class="contact-card">
+        <i class='bx bx-phone'></i>
+        <h3>Telepon</h3>
+        <p>+62 895-3553-42748</p>
+      </div>
+
+      <div class="contact-card">
+        <i class='bx bxl-instagram'></i>
+        <h3>Instagram</h3>
+        <p><a href="#">@wisata.indonesia</a></p>
+      </div>
+    </div>
+
+    <div class="creator-info">
+      <p><b>Nama:</b> Virlin Aryandi</p>
+      <p><b>NIM:</b> 231011400882</p>
+      <p><b>CLASS:</b> 05TPLM006</p>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; Virlin Aryandi 2025 | Wisata Indonesia</p>
+  </footer>
+
+  <script>
+    // Modal popup
+    const modal = document.getElementById("modal");
+    const modalImg = document.getElementById("modal-img");
+    const modalTitle = document.getElementById("modal-title");
+    const modalDesc = document.getElementById("modal-desc");
+    const closeBtn = document.querySelector(".close");
+
+    document.querySelectorAll(".destination-card").forEach(item => {
+      item.querySelector(".detail-btn").addEventListener("click", () => {
+        modal.style.display = "flex";
+        modalImg.src = item.dataset.img;
+        modalTitle.textContent = item.dataset.name;
+        modalDesc.textContent = item.dataset.desc;
+      });
+    });
+
+    closeBtn.onclick = () => (modal.style.display = "none");
+    window.onclick = e => { if (e.target === modal) modal.style.display = "none"; };
+
+    // Animasi fade-in saat scroll
+    const fadeElements = document.querySelectorAll(".fade-in");
+    window.addEventListener("scroll", () => {
+      fadeElements.forEach(el => {
+        const pos = el.getBoundingClientRect().top;
+        if (pos < window.innerHeight - 100) {
+          el.classList.add("show");
+        }
+      });
+    });
+  </script>
+</body>
+</html>

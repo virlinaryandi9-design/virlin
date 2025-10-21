@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Registrasi</title>
+    <style>
+        body {
+            background-color: #d6bee8; /* ungu muda lembut */
+            font-family: Arial, sans-serif;
+            color: #000;
+            margin: 50px;
+        }
+
+        h2 {
+            text-align: center;
+            color: #6f4e8f;
+            font-family: "Comic Sans MS", cursive;
+        }
+
+        form {
+            margin: 0 auto;
+            width: 420px;
+            border: 1px solid #ccc;
+            padding: 25px;
+            border-radius: 10px;
+            background-color: #ffffff;
+            box-shadow: 0 0 15px rgba(82, 62, 107, 0.4);
+        }
+
+        table {
+            width: 100%;
+        }
+
+        td {    
+            padding: 5px;
+            vertical-align: top;
+            font-size: 14px;
+        }
+
+        input[type="text"], textarea, select {
+            width: 100%;
+            padding: 5px;
+            box-sizing: border-box;
+            border: 1px solid #231b29;
+            border-radius: 4px;
+        }
+
+        input[type="radio"], input[type="checkbox"] {
+            margin-right: 5px;
+        }
+
+        textarea {
+            resize: none;
+        }
+
+        .button {
+            text-align: center;
+            margin-top: 15px;
+        }
+
+        input[type="submit"], input[type="reset"] {
+            padding: 6px 20px;
+            background-color: #cab2e4;
+            border: none;
+            border-radius: 5px;
+            color: rgb(61, 53, 72);
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        input[type="submit"]:hover, input[type="reset"]:hover {
+            background-color: #684f7d;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Free Registration</h2>
+
+    <form action="#" method="post">
+        <table>
+            <tr>
+                <td>Nama</td>
+                <td>: <input type="text" name="nama"></td>
+            </tr>
+            <tr>
+                <td>Tgl Lahir</td>
+                <td>: 
+                    <input type="text" name="tgl" size="2" placeholder="dd"> /
+                    <input type="text" name="bln" size="2" placeholder="mm"> /
+                    <input type="text" name="thn" size="4" placeholder="yyyy">
+                </td>
+            </tr>
+            <tr>
+                <td>Alamat</td>
+                <td>: <textarea name="alamat" rows="3"></textarea></td>
+            </tr>
+            <tr>
+                <td>Kota</td>
+                <td>: <input type="text" name="kota"></td>
+            </tr>
+            <tr>
+                <td>Pekerjaan</td>
+                <td>:
+                    <select name="pekerjaan">
+                        <option value="Tani">Tani</option>
+                        <option value="Guru">Guru</option>
+                        <option value="Pelajar">Pelajar</option>
+                        <option value="Pegawai">Pegawai</option>
+                        <option value="Wiraswasta">Wiraswasta</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Jenis Kelamin</td>
+                <td>: 
+                    <input type="radio" name="jk" value="Laki-Laki">Laki-Laki
+                    <input type="radio" name="jk" value="Perempuan">Perempuan
+                </td>
+            </tr>
+            <tr>
+                <td>Hobby</td>
+                <td>:
+                    <input type="checkbox" name="hobby" value="Reading">Reading<br>
+                    <input type="checkbox" name="hobby" value="Sport">Sport<br>
+                    <input type="checkbox" name="hobby" value="Singing">Singing<br>
+                    <input type="checkbox" name="hobby" value="Traveling">Traveling
+                </td>
+            </tr>
+        </table>
+
+        <div class="button">
+            <input type="submit" value="Kirim">
+            <input type="reset" value="Cancel">
+        </div>
+    </form>
+
+</body>
+</html>

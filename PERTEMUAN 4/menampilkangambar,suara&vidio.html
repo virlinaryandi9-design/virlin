@@ -1,0 +1,82 @@
+    <!DOCTYPE html>
+    <html lang="id">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Tampilan Video HTML5</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                text-align: center;
+                background-color: #a0add8;
+                margin-top: 40px;
+            }
+            video {
+                margin-top: 15px;
+                border: 2px solid #6580d9;
+                border-radius: 10px;
+            }
+            button {
+                background-color: #8382ca;
+                border: 1px solid #555cd5;
+                padding: 5px 10px;
+                margin: 4px;
+                cursor: pointer;
+                border-radius: 5px;
+            }
+            button:hover {
+                background-color: #6c80b0;
+            }
+            figcaption {
+                margin-top: 8px;
+                font-size: 14px;
+                font-style: italic;
+            }
+        </style>
+    </head>
+    <body>
+
+        <h2>Video HTML5 dengan Tombol Kontrol</h2>
+        <p>Gunakan tombol di bawah untuk mengontrol video.</p>
+
+        <div>
+            <button onclick="playPause()">Play/Pause</button>
+            <button onclick="makeBig()">Big</button>
+            <button onclick="makeSmall()">Small</button>
+            <button onclick="makeNormal()">Normal</button>
+        </div>
+
+        <figure>
+            <!-- Ganti src dengan nama file video kamu -->
+            <video id="myVideo" width="480" controls>
+                <source src="video.mp4" type="video/mp4">
+                Browser anda tidak mendukung video HTML5.
+            </video>
+            <figcaption>Gambar 16 Tampilan video HTML5</figcaption>
+        </figure>
+
+        <script>
+            var myVideo = document.getElementById("myVideo");
+
+            function playPause() {
+                if (myVideo.paused)
+                    myVideo.play();
+                else
+                    myVideo.pause();
+            }
+
+            function makeBig() {
+                myVideo.width = 720;
+            }
+
+            function makeSmall() {
+                myVideo.width = 320;
+            }
+
+            function makeNormal() {
+                myVideo.width = 480;
+            }
+        </script>
+
+    </body>
+    </html>
